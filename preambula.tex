@@ -1,0 +1,99 @@
+\documentclass[russian,14pt,a4paper,times]{extarticle}
+\usepackage[T2A]{fontenc}
+\usepackage[left=3cm, right=1cm, top=2cm, bottom=2.5cm]{geometry}
+\usepackage[utf8x]{inputenc}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{nameref}
+\usepackage{babel}
+\usepackage{indentfirst}
+\usepackage{titlesec}
+\usepackage{ragged2e}
+\usepackage[none]{hyphenat}
+\usepackage{tocloft}
+\usepackage{titletoc}
+\usepackage{caption}
+\usepackage{tabularray}
+\usepackage{setspace}
+\usepackage{pgfplots}
+\usepackage{chngcntr}
+\graphicspath{ {images/} }
+%\usepackage{hyperref}
+
+%Создание команды для введения и заключения, по центру большими буквами
+\newcommand*{\vved}[1]{
+	\begin{center}
+		\textbf{\MakeUppercase{#1}}
+	\end{center}
+	\addcontentsline{toc}{part}{#1}
+}
+%Создание команды для введения и заключения, по центру большими буквами
+
+% Удаление сабсабсекций с содержания, если нужны, то закоментируйте
+\setcounter{tocdepth}{2}
+%\setcounter{secnumdepth}{2}
+% Удаление сабсабсекций с содержания, если нужны, то закоментируйте
+
+\sloppy
+% Форматирование листа содержания
+	\titlecontents{subsubsection}
+[1.5em] %
+{\smallskip}
+{\thecontentslabel\hspace{1.02em}}%\thecontentslabel
+{\hspace*{2.32em}}
+{\,\,\titlerule*[0.77pc]{}\contentspage}
+
+	\titlecontents{subsection}
+[1.5em] %
+{\smallskip}
+{\thecontentslabel\hspace{1.02em}}%\thecontentslabel
+{\hspace*{2.32em}}
+{\,\,\titlerule*[0.77pc]{}\contentspage}
+
+	\titlecontents{section}
+[1.5em] %
+{\smallskip}
+{\thecontentslabel\hspace{1.80em}}%\thecontentslabel
+{\hspace*{2.32em}}
+{\,\,\titlerule*[0.77pc]{}\contentspage}
+
+	\titlecontents{part}
+[1.5em] %
+{\smallskip}
+{\thecontentslabel\hspace{1.80em}}%\thecontentslabel
+{\hspace*{0em}}
+{\,\,\titlerule*[0.77pc]{}\contentspage}
+% Форматироваине листа содержания
+
+% Содержание по центру и большими буквами
+\renewcommand{\cfttoctitlefont}{\hfill\Large\fontsize{14}{16.8}\bfseries\MakeUppercase}
+\renewcommand{\cftaftertoctitle}{\hfill\hfill}
+\renewcommand{\baselinestretch}{1}
+% Содержание по центру и большими буквами
+
+% Установка размера и интервалов секций и подсекций и подподсекций
+\titleformat{\section}{\fontsize{14}{16.8}\selectfont\bfseries}{\thesection}{0.5em}{}
+\titleformat{\subsection}{\fontsize{14}{16.8}\selectfont\bfseries}{\thesubsection}{0.5em}{}
+\titleformat{\subsubsection}{\fontsize{14}{16.8}\selectfont}{\thesubsubsection}{0.5em}{}
+\titlespacing{\section}{\parindent}{0em}{1em}
+\titlespacing{\subsection}{\parindent}{1.6em}{1em}
+\titlespacing{\subsubsection}{\parindent}{1em}{1em}
+% Установка размера и интервалов секций и подсекций подподсекций
+
+%Установка подписи рисунков и таблиц по стандарту
+\DeclareCaptionLabelSeparator{custom}{ -- }
+\captionsetup[figure]{labelsep=custom, name=Рисунок, font=normalfont}
+\captionsetup[table]{labelsep=custom, name=Таблица, font=normalfont}
+%Установка подписи рисунков и таблиц по стандарту
+
+% Установка нумерации рисунка и таблиц секция.номер
+\counterwithin{figure}{section}
+\renewcommand{\thefigure}{\arabic{section}.\arabic{figure}}
+\counterwithin{table}{section}
+\renewcommand{\thetable}{\arabic{section}.\arabic{table}}
+% Установка нумерации рисунка и таблиц секция.номер
+
+
+
+
