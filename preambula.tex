@@ -1,7 +1,7 @@
-\documentclass[russian,14pt,a4paper,times]{extarticle}
-\usepackage[T2A]{fontenc}
+\documentclass[russian,14pt,a4paper]{extarticle}
+%\usepackage[T2A]{fontenc} % -- не требуется для xeLaTex
 \usepackage[left=3cm, right=1cm, top=2cm, bottom=2.5cm]{geometry}
-\usepackage[utf8x]{inputenc}
+%\usepackage[utf8x]{inputenc} % -- не требуется для xeLaTex
 \usepackage{graphicx}
 \usepackage{amssymb}
 \usepackage{amsthm}
@@ -19,6 +19,19 @@
 \usepackage{pgfplots}
 \usepackage{chngcntr}
 \graphicspath{ {images/} }
+
+% пакеты для работы XeLaTex
+\usepackage{xunicode}
+\usepackage{xltxtra}
+\usepackage{polyglossia}
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\newfontfamily{\cyrillicfont}{Times New Roman}
+%\setromanfont{Times New Roman}
+\setdefaultlanguage{russian}
+% пакеты для работы XeLaTex
+
+
 %\usepackage{hyperref}
 
 %Создание команды для введения и заключения, по центру большими буквами
@@ -92,6 +105,7 @@
 \renewcommand{\thefigure}{\arabic{section}.\arabic{figure}}
 \counterwithin{table}{section}
 \renewcommand{\thetable}{\arabic{section}.\arabic{table}}
+\pgfplotsset{compat=1.18} % -- для диаграм и др
 % Установка нумерации рисунка и таблиц секция.номер
 
 
