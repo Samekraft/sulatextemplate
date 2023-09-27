@@ -18,6 +18,10 @@
 \usepackage{setspace}
 \usepackage{pgfplots}
 \usepackage{chngcntr}
+\usepackage{csquotes}
+\usepackage{array}
+\usepackage{titling}
+
 \graphicspath{ {images/} }
 
 % пакеты для работы XeLaTex
@@ -27,12 +31,22 @@
 \usepackage{fontspec}
 \setmainfont{Times New Roman}
 \newfontfamily{\cyrillicfont}{Times New Roman}
+\newfontfamily{\cyrillicfonttt}{Times New Roman}
 %\setromanfont{Times New Roman}
 \setdefaultlanguage{russian}
 % пакеты для работы XeLaTex
 
+%Пакет и настройка для работы с билиографией
+\usepackage[
+backend=biber, 
+sorting=nyt,
+bibstyle=gost-numeric,
+citestyle=gost-numeric
+]{biblatex}
+\addbibresource{biblio/bibliography.bib}
+%Пакет и настройка для работы с билиографией
 
-%\usepackage{hyperref}
+
 
 %Создание команды для введения и заключения, по центру большими буквами
 \newcommand*{\vved}[1]{

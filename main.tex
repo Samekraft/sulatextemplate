@@ -1,6 +1,14 @@
 \input{preambula}
-
+\def\institute{Автоматики и информационных технологий}
+\def\kafedra{Электроники, телекоммуникации и космических технологий}
+\def\tipraboty{СРСП}
+\author{Ратушняк С.В}
+\title{Как создать шаблон в Latex}
+\def\prepod{Гончаров А.Б}
+\def\shifrop{0A00000}
 \begin{document}
+	\include{titulka}
+	
 	\tableofcontents
 	\newpage
 	
@@ -12,6 +20,9 @@
 	\subsection{Сабсекция}
 	\subsection{Сабсекция}
 	\subsubsection{Это саб саб секция, которая не отоброзится в содержании}
+	Тест\cite{PinillaToro2019}
+	
+	Тест юрл
 	\newpage
 	
 	\section{Секция}
@@ -21,4 +32,7 @@
 	
 	\vved{Заключение}
 	Сюда пишите своё огромное или не очень заключение, обычно оно просто текстом, без форматирования
+	
+	\newpage
+	\printbibliography
 \end{document}
