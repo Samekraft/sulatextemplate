@@ -21,6 +21,7 @@
 \usepackage{csquotes}
 \usepackage{array}
 \usepackage{titling}
+\usepackage[hidelinks]{hyperref}
 
 \graphicspath{ {images/} }
 
@@ -44,6 +45,10 @@ bibstyle=gost-numeric,
 citestyle=gost-numeric
 ]{biblatex}
 \addbibresource{biblio/bibliography.bib}
+\defbibheading{su}[Список литературы]{
+	\part*{\normalsize\centering\uppercase{#1}}
+	\addcontentsline{toc}{part}{#1}
+	}
 %Пакет и настройка для работы с билиографией
 
 
