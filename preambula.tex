@@ -114,7 +114,7 @@ citestyle=gost-numeric
 % Установка размера и интервалов секций и подсекций подподсекций
 
 %Установка подписи рисунков и таблиц по стандарту
-\DeclareCaptionLabelSeparator{custom}{ -- }
+\DeclareCaptionLabelSeparator{custom}{ — }
 \captionsetup[figure]{labelsep=custom, name=Рисунок, font=normalfont}
 \captionsetup[table]{labelsep=custom, name=Таблица, font=normalfont}
 %Установка подписи рисунков и таблиц по стандарту
@@ -127,6 +127,20 @@ citestyle=gost-numeric
 \pgfplotsset{compat=1.18} % -- для диаграм и др
 % Установка нумерации рисунка и таблиц секция.номер
 
+%Для кириллицы в формурах
+\usepackage{unicode-math}
+\setmathfont{CMU Serif}
 
+\DeclareSymbolFont{cyrletters}{\encodingdefault}{\familydefault}{m}{it}
+\newcommand{\makecyrmathletter}[1]{%
+	\begingroup\lccode`a=#1\lowercase{\endgroup
+		\Umathcode`a}="0 \csname symcyrletters\endcsname\space #1
+}
+\count255="409
+\loop\ifnum\count255<"44F
+\advance\count255 by 1
+\makecyrmathletter{\count255}
+\repeat
+%Для кириллицы в формурах
 
 
